@@ -31,7 +31,6 @@ gulp.task('clean', function() {
 });
 
 gulp.task('copy', function() {
-    //vendor
     gulp.src(paths.vendor)
         .pipe(gulp.dest('build/vendor/'))
 });
@@ -46,7 +45,6 @@ gulp.task('html', function () {
 });
 
 gulp.task('less', function () {
-    //return gulp.src('./less/**/*.less')
     return gulp.src(paths.less)
         .pipe(less({
         paths: [ path.join(__dirname, 'less', 'includes') ]
@@ -57,44 +55,33 @@ gulp.task('less', function () {
 
 gulp.task('images', function () {
     return gulp.src(paths.images)
-        // .pipe(plumber())
         .pipe(changed('build/images'))
         .pipe(imagemin({
             optimizationLevel: 5,
             progressive: true
-            // interlaced: false
         }))
         .pipe(gulp.dest('build/images'));
 });
 
 gulp.task('json', function () {
     return gulp.src(paths.json)
-        // .pipe(plumber())
         .pipe(changed('build/json'))
         .pipe(imagemin({
             optimizationLevel: 5,
             progressive: true
-            // interlaced: false
         }))
         .pipe(gulp.dest('build/json'));
 });
 
-// Lint JavaScript
 gulp.task('lint', function () {
   return gulp.src('./dev/js/**/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(jshint.reporter('fail'));
-    // .pipe(jshint.reporter('default'));
 });
 
 gulp.task('scripts', function () {
     return gulp.src(paths.scripts)
-        // .pipe(plumber())
-        // .pipe(uglify('app.min.js', {
-        //     'sourcemap=none': true,
-        //     basePath: 'src/js/'
-        // }))
         .pipe(gulp.dest('build/js'));
 });
 

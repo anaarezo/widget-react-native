@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sample - LESS</title>
-  <!-- Head -->
-  @@include('./partials/tags/header.html')
-  <!-- /.Head-->
+    <!-- Header Tags/Scripts -->
+    @@include('./template/tags/head.html')
 </head>
 <body>
-    <div>
-
-        @@include('./partials/components/test.html')
-    </div>
+    <!-- Header -->
+    @@include('./template/global/header.html')
+    
+    <!-- Components -->
+    @@include('./template/content/component.html')
 
     <!-- Footer -->
-    @@include('./partials/tags/footer.html')
-    <!-- /.Footer -->
+    @@include('./template/global/footer.html')
+
+    <!-- Footer Tags/Scripts -->
+    @@include('./template/tags/foot.html')
+
 </body>
 </html>
