@@ -9,7 +9,8 @@ var clean         = require('gulp-clean');
 var jshint        = require('gulp-jshint');
 var connect       = require('gulp-connect');
 var fileinclude   = require('gulp-file-include');
-var browserSync = require('browser-sync').create();
+var browserSync   = require('browser-sync').create();
+var sourcemaps    = require('gulp-sourcemaps');
 
 var bases = {
     dev: 'dev/',
@@ -46,9 +47,11 @@ gulp.task('html', function () {
 
 gulp.task('less', function () {
     return gulp.src(paths.less)
+        .pipe(sourcemaps.init())
         .pipe(less({
         paths: [ path.join(__dirname, 'less', 'includes') ]
         }))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./build/css/'));
 });
 
