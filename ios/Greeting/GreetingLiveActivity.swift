@@ -1,6 +1,6 @@
 //
-//  ClockWidgetLiveActivity.swift
-//  ClockWidget
+//  GreetingLiveActivity.swift
+//  Greeting
 //
 //  Created by Ana Arezo on 12/07/2025.
 //
@@ -9,7 +9,7 @@ import ActivityKit
 import WidgetKit
 import SwiftUI
 
-struct ClockWidgetAttributes: ActivityAttributes {
+struct GreetingAttributes: ActivityAttributes {
     public struct ContentState: Codable, Hashable {
         // Dynamic stateful properties about your activity go here!
         var emoji: String
@@ -19,9 +19,9 @@ struct ClockWidgetAttributes: ActivityAttributes {
     var name: String
 }
 
-struct ClockWidgetLiveActivity: Widget {
+struct GreetingLiveActivity: Widget {
     var body: some WidgetConfiguration {
-        ActivityConfiguration(for: ClockWidgetAttributes.self) { context in
+        ActivityConfiguration(for: GreetingAttributes.self) { context in
             // Lock screen/banner UI goes here
             VStack {
                 Text("Hello \(context.state.emoji)")
@@ -56,25 +56,25 @@ struct ClockWidgetLiveActivity: Widget {
     }
 }
 
-extension ClockWidgetAttributes {
-    fileprivate static var preview: ClockWidgetAttributes {
-        ClockWidgetAttributes(name: "World")
+extension GreetingAttributes {
+    fileprivate static var preview: GreetingAttributes {
+        GreetingAttributes(name: "World")
     }
 }
 
-extension ClockWidgetAttributes.ContentState {
-    fileprivate static var smiley: ClockWidgetAttributes.ContentState {
-        ClockWidgetAttributes.ContentState(emoji: "😀")
+extension GreetingAttributes.ContentState {
+    fileprivate static var smiley: GreetingAttributes.ContentState {
+        GreetingAttributes.ContentState(emoji: "😀")
      }
      
-     fileprivate static var starEyes: ClockWidgetAttributes.ContentState {
-         ClockWidgetAttributes.ContentState(emoji: "🤩")
+     fileprivate static var starEyes: GreetingAttributes.ContentState {
+         GreetingAttributes.ContentState(emoji: "🤩")
      }
 }
 
-#Preview("Notification", as: .content, using: ClockWidgetAttributes.preview) {
-   ClockWidgetLiveActivity()
+#Preview("Notification", as: .content, using: GreetingAttributes.preview) {
+   GreetingLiveActivity()
 } contentStates: {
-    ClockWidgetAttributes.ContentState.smiley
-    ClockWidgetAttributes.ContentState.starEyes
+    GreetingAttributes.ContentState.smiley
+    GreetingAttributes.ContentState.starEyes
 }
