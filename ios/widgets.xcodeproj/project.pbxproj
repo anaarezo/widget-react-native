@@ -75,8 +75,6 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		8EC491492E230CA900A92EB1 /* ClockWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ClockWidget; sourceTree = "<group>"; };
-		8EC491662E230E4100A92EB1 /* GreetingWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = GreetingWidget; sourceTree = "<group>"; };
 		8EC491802E230EF000A92EB1 /* Greeting */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (8EC4918F2E230EF200A92EB1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Greeting; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -139,8 +137,6 @@
 			children = (
 				13B07FAE1A68108700A75B9A /* widgets */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				8EC491492E230CA900A92EB1 /* ClockWidget */,
-				8EC491662E230E4100A92EB1 /* GreetingWidget */,
 				8EC491802E230EF000A92EB1 /* Greeting */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
